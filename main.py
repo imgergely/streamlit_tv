@@ -11,9 +11,9 @@ def app():
         rtl = st.button("RTL")
 
     if tv2:
-        st.video("https://cdn.mediaklikk.org:443/tv2/0MjMxEjMxITM")
+        st.video("https://cdn.mediaklikk.org:443/tv2/0MjMxEjMxITM", start_time=0)
     if rtl:
-        st.video("https://cdn.mediaklikk.org:443/rtl/0MjMxEjMxITM")
+        st.video("https://cdn.mediaklikk.org:443/rtl/0MjMxEjMxITM", start_time=0)
 
 if __name__ == "__main__":
     app()
