@@ -11,9 +11,28 @@ def app():
         rtl = st.button("RTL")
 
     if tv2:
-        st.video("https://cdn.mediaklikk.org:443/tv2/0MjMxEjMxITM", start_time=0)
+        components.html(
+        """
+        <video controls autoplay="true" id="video">
+        <source 
+            src="https://cdn.mediaklikk.org:443/tv2/0MjMxEjMxITM" 
+            type="video/mp4" />
+        </video>
+        """,
+        height=1754,
+        width=1240)
+        
     if rtl:
-        st.video("https://cdn.mediaklikk.org:443/rtl/0MjMxEjMxITM", start_time=0)
+        components.html(
+        """
+        <video controls autoplay="true" id="video">
+        <source 
+            src="https://cdn.mediaklikk.org:443/rtl/0MjMxEjMxITM" 
+            type="video/mp4" />
+        </video>
+        """,
+        height=1754,
+        width=1240)
 
 if __name__ == "__main__":
     app()
