@@ -4,7 +4,7 @@ import streamlit.components.v1 as components
 
 def app():
     
-    col1, col2, col3, col4 = st.columns(4)
+    col1, col2, col3, col4 = st.columns(2)
     with col1:
         tv2 = st.button("TV2")
     with col2:
