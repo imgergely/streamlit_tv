@@ -24,10 +24,10 @@ def app():
         ujra = st.button("ÚJRATÖLT")
 
     if tv2:
-        run("https://cdn.mediaklikk.org:443/tv2/0MjMxEjMxITM")
+        run("https://cdn.mediaklikk.org:443/tv2/0MjMxEDMxQTM")
        
     if rtl:
-        run("https://cdn.mediaklikk.org:443/rtl/0MjMxEjMxITM")
+        run("https://cdn.mediaklikk.org:443/rtl/0MjMxEDMxQTM")
 
     if ujra:
         st.experimental_rerun()
