@@ -1,16 +1,30 @@
 import time
 from bs4 import BeautifulSoup
+
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
+
 from webdriver_manager.chrome import ChromeDriverManager
 import streamlit as st
 import streamlit.components.v1 as components
 
+options = Options()
+options.add_argument('--disable-gpu')
+options.add_argument('--headless')
 
+
+@st.experimental_singleton
 def getlink(url):
-    driver = webdriver.Chrome(ChromeDriverManager().install())
+    
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+
+
+
     time.sleep(0.5)
     driver.get(url)
     time.sleep(0.5)
+
     soup = BeautifulSoup(driver.page_source, 'html')
 
     video = soup.find('video')
