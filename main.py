@@ -1,6 +1,24 @@
+import time
+from bs4 import BeautifulSoup
+from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
 import streamlit as st
 import streamlit.components.v1 as components
 
+
+def getlink(url):
+    driver = webdriver.Chrome(ChromeDriverManager().install())
+    time.sleep(0.5)
+    driver.get(url)
+    time.sleep(0.5)
+    soup = BeautifulSoup(driver.page_source, 'html')
+
+    video = soup.find('video')
+
+    link = ""
+    for i in video:
+        link+=i['src']
+    return link
 
 def run(url):
     components.html(
@@ -24,10 +42,12 @@ def app():
         ujra = st.button("ÚJRATÖLT")
 
     if tv2:
-        run("https://cdn.mediaklikk.org:443/tv2/0MjMxEDMxQTM")
+        link = getlink("https://onlinestream.live/tv2/videoplayer/6143-2")
+        run(link)
        
     if rtl:
-        run("https://cdn.mediaklikk.org:443/rtl/0MjMxEDMxQTM")
+        link = getlink("https://onlinestream.live/rtl/videoplayer/6141-2")
+        run(link)
 
     if ujra:
         st.experimental_rerun()
