@@ -35,12 +35,16 @@ def getlink(url):
     return link
 
 def run(url):
+    
     components.html(
     """
+        <div style="display: flex; justify-content: center; align-items: center;">
         <video controls autoplay="true" id="video">
-        <source src={} type="video/mp4" />
+            <source src= {0} type="video/mp4" />
         </video>
-        
+        </div>
+
+
         <script>
 
         const video = document.getElementById('video');
@@ -55,7 +59,7 @@ def run(url):
 
         </script>
 
-    """.format(url), width=1050, height=768)
+    """.format(url), width=1070, height=768)
 
 
 def app():
