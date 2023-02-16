@@ -40,6 +40,20 @@ def run(url):
         <video controls autoplay="true" id="video">
         <source src={} type="video/mp4" />
         </video>
+        
+        <script>
+
+        const video = document.getElementById('video');
+        let previousTime = video.currentTime;
+
+        setInterval(() => {{
+        if (video.currentTime < 1000) {{
+            console.log('Video is NOT playing');
+            video.load();
+        }}
+        }}, 2000);
+
+        </script>
 
     """.format(url), width=1050, height=768)
 
