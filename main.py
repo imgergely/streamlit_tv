@@ -68,7 +68,7 @@ def run_hls(url):
 
     <script>
     var video = document.getElementById('video');
-    var videoSrc = "{}";
+    var videoSrc = "https://vod2.sweet.tv/88/17031/01/17031_01_01.m3u8";
     if (Hls.isSupported()) {{
       var hls = new Hls();
       hls.loadSource(videoSrc);
